@@ -138,6 +138,7 @@
              }
 
 
+
 <!--            saveFloat32ArrayAsFile(gDepthMap.depthMap, w, h, lat +'_' + lng)-->
 <!--            .then(() => {-->
 <!--                saveimg(w, h, lat +'_' + lng); // Execute the second function after the first one completes-->
@@ -147,6 +148,8 @@
                 saveimg(w, h, lat +'_' + lng); // Execute the second function after the first one completes
             });
 
+<!--            console.log(456);-->
+            console.log(_panoLoader.result);
 
 
 <!--            saveFloat32ArrayAsFile(gDepthMap.depthMap,w, h);-->
@@ -161,8 +164,9 @@
 
 <!--            https://enricofer.github.io/streetmeasure/?lat=37.874099068089656&lon=-122.26878067370046-->
 <!--37.874099068089656, -122.26878067370046-->
-<!--            _panoLoader.load(new google.maps.LatLng(42.345601, -71.098348));-->
-            _panoLoader.load(new google.maps.LatLng(37.874099068089656, -122.26878067370046));
+<!--42.345601, -71.098348-->
+            _panoLoader.load(new google.maps.LatLng(42.345601,  -71.098348));
+<!--            _panoLoader.load(new google.maps.LatLng(37.874099068089656, -122.26878067370046));-->
 
         }
 
