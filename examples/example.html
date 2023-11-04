@@ -45,7 +45,9 @@
                 console.log('gDepthMap = this.depthMap;');
                 document.body.appendChild(canvas);
 
-                            function saveDepthAndImage(float32Array, width, height, name) {
+                function saveFloat32ArrayAsFile(float32Array, width, height, name) {
+
+              return new Promise((resolve, reject)=> {
               const csvContent = [];
 
               // Convert the Float32Array to a CSV string
@@ -67,46 +69,69 @@
               // Create a link and simulate a click to trigger the download
               const a = document.createElement('a');
               a.href = url;
-              a.download = name + '.csv'; // Filename
+              a.download = name+'.csv'; // Filename
               a.click();
-              console.log(name);
+              console.log(w,h);
+              // Clean up by revoking the object URL
+
+              URL.revokeObjectURL(url);
 
               setTimeout(() => {
-              const canvasElements = document.getElementsByTagName('canvas');
-              const canvasElement = canvasElements[0];
-              const downloadLink = document.createElement('a');
-              const imageData = canvasElement.toDataURL();
-              downloadLink.href = imageData;
-              downloadLink.download = lat + '_' + lng + '.png';
-              downloadLink.click();
-            }, 1000);
-              setTimeout();
-<!--              URL.revokeObjectURL(url);-->
-<!--              const canvasElements = document.getElementsByTagName('canvas');-->
-<!--              const canvasElement = canvasElements[0];-->
-<!--              const downloadLink = document.createElement('a');-->
-<!--              const imageData = canvasElement.toDataURL();-->
-<!--              downloadLink.href = imageData;-->
-<!--              downloadLink.download = lat+'_'+lng+'.png';-->
-<!--              downloadLink.click();-->
+                    // Simulating the completion of the first function
+                    console.log("First function completed.");
+                    resolve(); // Resolving the promise to signal completion of the first function
+                }, 2000); // Simulating a delay of 2000 ms (2 seconds)
+            });
 
-
-              // Clean up by revoking the object URL
-<!--              URL.revokeObjectURL(url);-->
             }
 
-            for (const key in _panoLoader.result.TK) {
-                if(key == _panoLoader.panoId){
-                    var lat = _panoLoader.result.TK[key]['lat'];
-                    var lng = _panoLoader.result.TK[key]['lng'];
+
+
+            function saveimg( width, height, name) {
+               const canvasElements = document.getElementsByTagName('canvas');
+               const canvasElement = canvasElements[0];
+               const downloadLink = document.createElement('a');
+               const imageData = canvasElement.toDataURL();
+               downloadLink.href = imageData;
+               downloadLink.download = name + '.png';
+               downloadLink.click();
                 }
-            }
 
 
 
-            saveDepthAndImage(gDepthMap.depthMap,w, h, lat +'_' + lng);
-<!--            console.log(_panoLoader.panoId);-->
-<!--            console.log(_panoLoader.result);-->
+            var lat = 'None';
+            var lng = 'None';
+
+             if (_panoLoader.result.hasOwnProperty('UK')){
+                for (const key in _panoLoader.result.UK) {
+                if(key == _panoLoader.panoId){
+                    lat = _panoLoader.result.UK[key]['lat'];
+                    lng = _panoLoader.result.UK[key]['lng'];
+                }
+                }
+             }
+
+
+             if (_panoLoader.result.hasOwnProperty('TK')){
+                for (const key in _panoLoader.result.TK) {
+                if(key == _panoLoader.panoId){
+                    lat = _panoLoader.result.TK[key]['lat'];
+                    lng = _panoLoader.result.TK[key]['lng'];
+                }
+                }
+             }
+
+<!--            console.log( _panoLoader.result);-->
+<!--            var lat = 1;-->
+<!--            var lng = 2;-->
+            saveFloat32ArrayAsFile(gDepthMap.depthMap, w, h, lat +'_' + lng)
+            .then(() => {
+                saveimg(w, h, lat +'_' + lng); // Execute the second function after the first one completes
+            });
+
+<!--            saveFloat32ArrayAsFile(gDepthMap.depthMap,w, h);-->
+
+<!--&lt;!&ndash;            saveimg(w, h);&ndash;&gt;-->
             }
 
             _panoLoader.onPanoramaLoad = function() {
@@ -114,14 +139,15 @@
                 _depthLoader.load(this.panoId);
             };
 
-            _panoLoader.load(new google.maps.LatLng(37.874099068089656, -122.27878067370046));
+<!--            https://enricofer.github.io/streetmeasure/?lat=37.874099068089656&lon=-122.26878067370046-->
+<!--37.874099068089656, -122.26878067370046-->
+<!--            _panoLoader.load(new google.maps.LatLng(42.345601, -71.098348));-->
+            _panoLoader.load(new google.maps.LatLng(37.874099068089656, -122.26878067370046));
+
         }
 
         window.onload = init;
-    </script>
-<!--    const canvasElements = document.getElementsByTagName('canvas');-->
-<!--    console.log(canvasElements);-->
-<!--    console.log(123);-->
+    </script> 
 </head> 
 <body> 
 </body> 
