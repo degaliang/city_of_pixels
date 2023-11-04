@@ -97,6 +97,22 @@
                downloadLink.click();
                 }
 
+            function savedepthimg( width, height, name) {
+               return new Promise((resolve, reject)=> {
+               const canvasElements = document.getElementsByTagName('canvas');
+               const canvasElement = canvasElements[1];
+               const downloadLink = document.createElement('a');
+               const imageData = canvasElement.toDataURL();
+               downloadLink.href = imageData;
+               downloadLink.download = name+'_depth' + '.png';
+               downloadLink.click();
+              setTimeout(() => {
+                    // Simulating the completion of the first function
+                    console.log("First function completed.");
+                    resolve(); // Resolving the promise to signal completion of the first function
+                }, 2000); // Simulating a delay of 2000 ms (2 seconds)
+            });
+                }
 
 
             var lat = 'None';
@@ -121,13 +137,17 @@
                 }
              }
 
-<!--            console.log( _panoLoader.result);-->
-<!--            var lat = 1;-->
-<!--            var lng = 2;-->
-            saveFloat32ArrayAsFile(gDepthMap.depthMap, w, h, lat +'_' + lng)
+
+<!--            saveFloat32ArrayAsFile(gDepthMap.depthMap, w, h, lat +'_' + lng)-->
+<!--            .then(() => {-->
+<!--                saveimg(w, h, lat +'_' + lng); // Execute the second function after the first one completes-->
+<!--            });-->
+            savedepthimg(w, h, lat +'_' + lng)
             .then(() => {
                 saveimg(w, h, lat +'_' + lng); // Execute the second function after the first one completes
             });
+
+
 
 <!--            saveFloat32ArrayAsFile(gDepthMap.depthMap,w, h);-->
 
