@@ -166,8 +166,12 @@ GSVPANO.PanoLoader = function (parameters) {
 
     this.adaptTextureToZoom = function () {
 
+//        var w = 416 * Math.pow(2, _zoom - 0.7),
+//            h = (416 * Math.pow(2, _zoom - 2));
+
         var w = 416 * Math.pow(2, _zoom - 0.7),
-            h = (416 * Math.pow(2, _zoom - 2));
+            h = (416 * Math.pow(2, _zoom - 1.7));
+
         _canvas.width = w;
         _canvas.height = h;
         _ctx.translate( _canvas.width, 0);
