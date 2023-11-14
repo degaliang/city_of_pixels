@@ -123,6 +123,8 @@
                 if(key == _panoLoader.panoId){
                     lat = _panoLoader.result.UK[key]['lat'];
                     lng = _panoLoader.result.UK[key]['lng'];
+                    heading = _panoLoader.result.tiles['centerHeading'];
+                    console.log(heading);
                 }
                 }
              }
@@ -133,20 +135,22 @@
                 if(key == _panoLoader.panoId){
                     lat = _panoLoader.result.TK[key]['lat'];
                     lng = _panoLoader.result.TK[key]['lng'];
+                    heading = _panoLoader.result.tiles['centerHeading'];
+                    console.log(heading);
                 }
                 }
              }
 
 
 
-<!--            saveFloat32ArrayAsFile(gDepthMap.depthMap, w, h, lat +'_' + lng)-->
-<!--            .then(() => {-->
-<!--                saveimg(w, h, lat +'_' + lng); // Execute the second function after the first one completes-->
-<!--            });-->
-            savedepthimg(w, h, lat +'_' + lng)
+            saveFloat32ArrayAsFile(gDepthMap.depthMap, w, h, lat +'_' + lng+'_'+heading)
             .then(() => {
-                saveimg(w, h, lat +'_' + lng); // Execute the second function after the first one completes
+                saveimg(w, h, lat +'_' + lng +'_'+heading); // Execute the second function after the first one completes
             });
+<!--            savedepthimg(w, h, lat +'_' + lng+'_'+heading)-->
+<!--            .then(() => {-->
+<!--                saveimg(w, h, lat +'_' + lng+'_'+heading); // Execute the second function after the first one completes-->
+<!--            });-->
 
 <!--            console.log(456);-->
             console.log(_panoLoader.result);
@@ -170,7 +174,12 @@
 <!--37.87369486247833, -122.26868044574614-->
 <!--37.7689468751072_-122.388062913603-->
 <!--40.7623063205335,-73.97446787275378-->
-            _panoLoader.load(new google.maps.LatLng(40.7623063205335, -73.97446787275378));
+<!--37.76883408483024, -122.38892071430969-->
+<!--37.76882967189774, -122.38884535002529-->
+<!--37.768837591970716, -122.38903761469112-->
+<!--37.76890772617613_-122.38876083746081-->
+<!--37.768883652159936_-122.38908075369999-->
+            _panoLoader.load(new google.maps.LatLng(37.76890772617613, -122.38876083746081));
 <!--            _panoLoader.load(new google.maps.LatLng(37.874099068089656, -122.26878067370046));-->
 
         }
