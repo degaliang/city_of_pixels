@@ -162,6 +162,16 @@
                 }
                 }
              }
+             if (_panoLoader.result.hasOwnProperty('TJ')){
+                for (const key in _panoLoader.result.TJ) {
+                if(key == _panoLoader.panoId){
+                    lat = _panoLoader.result.TJ[key]['lat'];
+                    lng = _panoLoader.result.TJ[key]['lng'];
+                    heading = _panoLoader.result.tiles['centerHeading'];
+                    console.log(heading);
+                }
+                }
+             }
 
 
 
@@ -225,7 +235,7 @@
 <!--40.75794587138568, -73.98555500029951-->
 
 
-            _panoLoader.load(new google.maps.LatLng(40.75762448152416,-73.9857703038275));
+            _panoLoader.load(new google.maps.LatLng(40.759861, -73.984197));
 <!--            _panoLoader.load(new google.maps.LatLng(37.874099068089656, -122.26878067370046));-->
 
         }
