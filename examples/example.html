@@ -152,6 +152,17 @@
                 }
              }
 
+             if (_panoLoader.result.hasOwnProperty('XJ')){
+                for (const key in _panoLoader.result.XJ) {
+                if(key == _panoLoader.panoId){
+                    lat = _panoLoader.result.XJ[key]['lat'];
+                    lng = _panoLoader.result.XJ[key]['lng'];
+                    heading = _panoLoader.result.tiles['centerHeading'];
+                    console.log(heading);
+                }
+                }
+             }
+
 
 
             saveFloat32ArrayAsFile(gDepthMap.depthMap, w, h, lat +'_' + lng+'_'+heading)
@@ -209,7 +220,12 @@
 <!--37.788109235397755, -122.40785365646734-->
 <!--37.78821338735189, -122.4070360654792-->
 <!--37.787792500859005, -122.40708148560893-->
-            _panoLoader.load(new google.maps.LatLng(40.75812470955882, -73.98545169964082));
+
+
+<!--40.75794587138568, -73.98555500029951-->
+
+
+            _panoLoader.load(new google.maps.LatLng(40.758089316614154, -73.98582010759009));
 <!--            _panoLoader.load(new google.maps.LatLng(37.874099068089656, -122.26878067370046));-->
 
         }
