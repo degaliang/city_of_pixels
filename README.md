@@ -1,5 +1,5 @@
 # Enhanced Point Cloud Based 3D City Reconstruction from Google Street View
-# Author: Jinxuan Liang Yihua Zhou
+# Author: Jinxuan Liang, Yihua Zhou
 
 # Usage
 
