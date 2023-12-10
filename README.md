@@ -15,7 +15,7 @@ You can also use the same notebook with you own collected data.\
 Before you run the notebook, remember to change the center latitude, longitude and heading that you select.
 
 ## Video Demo
-[![Video Title]([https://img.youtube.com/vi/TUSRpaOvvdU/1.jpg](https://github.com/RichZhou1999/street_view_project/assets/91929958/9287c43f-6821-44cb-a10a-d40cecff3258))](https://youtu.be/TUSRpaOvvdU)
+[![Video Title](https://img.youtube.com/vi/TUSRpaOvvdU/0.jpg)](https://youtu.be/TUSRpaOvvdU)
 
 ## Reconstruction results
 ![demo1](https://github.com/RichZhou1999/street_view_project/assets/91929958/9baff3af-5b28-49c5-a587-bf26c07d42a3)
