@@ -16,7 +16,7 @@ Before you run the notebook, remember to change the center latitude, longitude a
 
 ## Video Demo
 ### Click to play our video demo
-[![Video Title](https://img.youtube.com/vi/TUSRpaOvvdU/0.jpg)](https://youtu.be/TUSRpaOvvdU)
+[![Video Title](https://img.youtube.com/vi/TUSRpaOvvdU/1.jpg)](https://youtu.be/TUSRpaOvvdU)
 
 ## Reconstruction results
 ![demo1](https://github.com/RichZhou1999/street_view_project/assets/91929958/9baff3af-5b28-49c5-a587-bf26c07d42a3)
