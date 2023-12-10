@@ -28,8 +28,7 @@ Before you run the notebook, remember to change the center latitude, longitude a
 ![demo4](https://github.com/RichZhou1999/street_view_project/assets/91929958/9287c43f-6821-44cb-a10a-d40cecff3258)
 
 
-
-## A large scenario
+## A larger scene
 Download the file from https://drive.google.com/file/d/1AaIaeoWAsG6MYssynZZ-oJSa5NcoqX8R/view?usp=sharing \
 You can run the notebook inside the file and reconstruct times square.
 
