@@ -19,12 +19,15 @@ Before you run the notebook, remember to change the center latitude, longitude a
 [![Video Title](https://img.youtube.com/vi/TUSRpaOvvdU/0.jpg)](https://youtu.be/TUSRpaOvvdU)
 
 ## Reconstruction results
+
+### Tower bridge in London
 ![demo1](https://github.com/RichZhou1999/street_view_project/assets/91929958/9baff3af-5b28-49c5-a587-bf26c07d42a3)
-Tower bridge in London
-![demo4](https://github.com/RichZhou1999/street_view_project/assets/91929958/9287c43f-6821-44cb-a10a-d40cecff3258)
-Times square in NY
+### Times Square in NY
 ![demo3](https://github.com/RichZhou1999/street_view_project/assets/91929958/0bab5f73-9aef-4cad-870e-f53b7dc2318c)
-Times square from a far view
+### Times Square from a far view
+![demo4](https://github.com/RichZhou1999/street_view_project/assets/91929958/9287c43f-6821-44cb-a10a-d40cecff3258)
+
+
 
 ## A large scenario
 Download the file from https://drive.google.com/file/d/1AaIaeoWAsG6MYssynZZ-oJSa5NcoqX8R/view?usp=sharing \
