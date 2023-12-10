@@ -1,40 +1,29 @@
-# GSVPanoDepth.js
+# Enhanced Point Cloud Based 3D City Reconstruction from Google Street View
+# Author: Jinxuan Liang Yihua Zhou
 
-A JavaScript library that downloads and extracts depth maps from Google Street View.
+# Usage
 
-## Usage
+## Data Collection ( currently only safari is supported)
+Go to data collection directory and open example.html file\
+Input the longitude and latitude that you are interested in to the line below.\
+panoLoader.load(new google.maps.LatLng(42.345601, -71.098348));\
+An image and a csv file containing depth data will be downloaded automatically.
 
-```html
-<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false" type="text/javascript"></script> 
-<script src="jquery.min.js" type="text/javascript"></script>
-<script src="jquery.base64.min.js" type="text/javascript"></script>
-<script src="zpipe.min.js" type="text/javascript"></script>
-<script src="GSVPanoDepth.js" type="text/javascript"></script>
-```
+## Reconstruction
+We provide a demo notebook under point cloud directory to reconstruction union square in san francisco.\
+You can also use the same notebook with you own collected data.\
+Before you run the notebook, remember to change the center latitude, longitude and heading that you select.
 
-```js
-var depthLoader = new GSVPANO.PanoDepthLoader();
+## Reconstruction results
+![demo1](https://github.com/RichZhou1999/street_view_project/assets/91929958/9baff3af-5b28-49c5-a587-bf26c07d42a3)
+Tower bridge in London
+![demo4](https://github.com/RichZhou1999/street_view_project/assets/91929958/9287c43f-6821-44cb-a10a-d40cecff3258)
+Times square in NY
+![demo3](https://github.com/RichZhou1999/street_view_project/assets/91929958/0bab5f73-9aef-4cad-870e-f53b7dc2318c)
+Times square from a far view
 
-depthLoader.onDepthLoad = function() {
+## A large scenario
+Download the file from https://drive.google.com/file/d/1AaIaeoWAsG6MYssynZZ-oJSa5NcoqX8R/view?usp=sharing \
+You can run the notebook inside the file and reconstruct times square.
 
-    // Returns depth map in the following format:
-    //
-    // this.depthMap.width: width of depth map in pixels
-    // this.depthMap.height: height of depth map in pixels
-    // this.depthMap.depthMap: Float32Array of size width*height that contains the depth at each pixel
-
-};
-
-panoLoader.load(new google.maps.LatLng(42.345601, -71.098348));
-```
-
-## Requirements
-
-* jQuery
-* [jquery-base64](https://github.com/carlo/jquery-base64)
-* [zpipe](https://github.com/richardassar/zpipe)
-* [GSVPano.js](https://github.com/spite/GSVPano.js) (slightly modified to include panorama ID in results)
-
-## License
-
-MIT License
+### Part of the code is from https://github.com/proog128/GSVPanoDepth.js
