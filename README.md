@@ -15,7 +15,7 @@ You can also use the same notebook with you own collected data.\
 Before you run the notebook, remember to change the center latitude, longitude and heading that you select.
 
 ## Video Demo
-Click to play our video demo
+### Click to play our video demo
 [![Video Title](https://img.youtube.com/vi/TUSRpaOvvdU/0.jpg)](https://youtu.be/TUSRpaOvvdU)
 
 ## Reconstruction results
