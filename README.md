@@ -22,7 +22,7 @@ Before you run the notebook, remember to change the center latitude, longitude a
 
 ### Tower bridge in London
 ![demo1](https://github.com/RichZhou1999/street_view_project/assets/91929958/9baff3af-5b28-49c5-a587-bf26c07d42a3)
-### Times Square in NY
+### Times Square in NYC
 ![demo3](https://github.com/RichZhou1999/street_view_project/assets/91929958/0bab5f73-9aef-4cad-870e-f53b7dc2318c)
 ### Times Square from a far view
 ![demo4](https://github.com/RichZhou1999/street_view_project/assets/91929958/9287c43f-6821-44cb-a10a-d40cecff3258)
